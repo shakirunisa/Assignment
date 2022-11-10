@@ -7,8 +7,8 @@
     "postinstall": "node ./decorate-angular-cli.js",
     "start": "nx serve",
     "runallApps": "nx run-many --parallel --target=serve --projects=indian-bank,american-bank",
-    "indian" : "nx serve indian-bank --port 4201",
-    "american" : "nx serve american-bank --port 4202",
+    "indian": "nx serve indian-bank --port 4201",
+    "american": "nx serve american-bank --port 4202",
     "build": "nx build",
     "test": "nx test"
   },
@@ -23,6 +23,8 @@
     "@angular/platform-browser-dynamic": "~14.2.0",
     "@angular/router": "~14.2.0",
     "@nrwl/angular": "15.0.13",
+    "primeicons": "^6.0.1",
+    "primeng": "^14.2.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

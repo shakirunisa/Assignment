@@ -18,7 +18,12 @@
           "apps/indian-bank/src/favicon.ico",
           "apps/indian-bank/src/assets"
         ],
-        "styles": ["apps/indian-bank/src/styles.css"],
+        "styles": [
+          "apps/indian-bank/src/styles.css",
+          "node_modules/primeng/resources/primeng.min.css",
+          "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+          "node_modules/primeicons/primeicons.css"
+        ],
         "scripts": []
       },
       "configurations": {
