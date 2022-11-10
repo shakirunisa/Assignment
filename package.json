@@ -6,6 +6,9 @@
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js",
     "start": "nx serve",
+    "runallApps": "nx run-many --parallel --target=serve --projects=indian-bank,american-bank",
+    "indian" : "nx serve indian-bank --port 4201",
+    "american" : "nx serve american-bank --port 4202",
     "build": "nx build",
     "test": "nx test"
   },
