@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { SharedModule } from '@bank/shared';
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule,
+  imports: [
+    BrowserModule,
     RouterModule.forRoot(appRoutes),
     SharedModule
   ],
