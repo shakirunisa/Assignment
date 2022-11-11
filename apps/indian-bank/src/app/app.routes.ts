@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { AuthGuard } from "@bank/feature-auth";
 
 export const appRoutes: Route[] = [
     {
@@ -8,6 +9,11 @@ export const appRoutes: Route[] = [
     {
         path: "auth",
         loadChildren: () => import("@bank/feature-auth").then(m => m.FeatureAuthModule),
+    },
+    {
+        path: "profile",
+        canActivate: [AuthGuard],
+        loadChildren: () => import("@bank/feature-profile").then(m => m.FeatureProfileModule),
     },
     {
         path: "",

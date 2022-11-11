@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { emailRegex } from '@bank/shared';
+import { Router } from '@angular/router';
+import { emailRegex, RoutePaths } from '@bank/shared';
+import { AuthService } from '@bank/shared';
 
 @Component({
   selector: 'bank-login',
@@ -12,11 +14,14 @@ export class LoginComponent{
   emailPattern = emailRegex;
   showPassword = false;
   showErrorMessage = false;
-  constructor(private formBuilder: FormBuilder ) {
-      this.loginForm = this.formBuilder.group({
-          email: ["", [Validators.required]],
-          password: ["", Validators.required],
-      });
+  constructor(private formBuilder: FormBuilder, public router: Router, private authService: AuthService ) {
+    if(localStorage.getItem("user")){
+      this.router.navigate([RoutePaths.PROFILE])
+    }
+    this.loginForm = this.formBuilder.group({
+        email: ["", [Validators.required]],
+        password: ["", Validators.required],
+    });
   }
 
   /**
@@ -25,7 +30,9 @@ export class LoginComponent{
    */
   signIn(loginForm: FormGroup) {
     if(loginForm.valid){
-      
+      this.authService.userloggedIn.next(true);
+      localStorage.setItem("user", loginForm.value.email)
+      this.router.navigate([RoutePaths.PROFILE])
     }
   }
 

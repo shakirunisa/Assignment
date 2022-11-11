@@ -10,6 +10,10 @@ export const appRoutes: Route[] = [
         loadChildren: () => import("@bank/feature-auth").then(m => m.FeatureAuthModule),
     },
     {
+        path: "profile",
+        loadChildren: () => import("@bank/feature-profile").then(m => m.FeatureProfileModule),
+    },
+    {
         path: "",
         pathMatch: "full",
         redirectTo: `/home`,
