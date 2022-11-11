@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { emailRegex, RoutePaths } from '@bank/shared';
+import { emailRegex, getUser, RoutePaths } from '@bank/shared';
 import { AuthService } from '@bank/shared';
 
 @Component({
@@ -13,9 +13,9 @@ export class LoginComponent{
   loginForm: FormGroup;
   emailPattern = emailRegex;
   showPassword = false;
-  showErrorMessage = false;
+  
   constructor(private formBuilder: FormBuilder, public router: Router, private authService: AuthService ) {
-    if(localStorage.getItem("user")){
+    if(getUser()){
       this.router.navigate([RoutePaths.PROFILE])
     }
     this.loginForm = this.formBuilder.group({
@@ -25,7 +25,7 @@ export class LoginComponent{
   }
 
   /**
-   * Will authenticate user credentials
+   * Will save user and redirects to profile route
    * @returns nothing
    */
   signIn(loginForm: FormGroup) {

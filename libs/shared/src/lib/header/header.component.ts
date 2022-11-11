@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { APP_URL, RoutePaths } from '../enums';
 import { LOCATION } from '../enums/Location';
 import { AuthService } from '../services/auth.service';
+import { getUser, removeUser } from '../utilities';
 
 @Component({
   selector: 'bank-header',
@@ -23,14 +24,6 @@ export class HeaderComponent implements OnInit{
     this.items = this.getMenuItems(this.userLoggedIn());
     this.isLoggedInSubscription = this.authService.userloggedIn$.subscribe((loggedIn)=>{
       this.items = this.getMenuItems(loggedIn)
-      console.log(this.items)
-      // if(loggedIn){
-      //   this.items = this.items.filter(menu => menu.label !== "User")
-      //   console.log(this.items)
-      // }
-      // else{
-      //   this.items = this.items.filter(menu => menu.label !== "Profile" && menu.label !== "Logout")
-      // }
     })
   }
 
@@ -90,13 +83,13 @@ export class HeaderComponent implements OnInit{
   }
 
   logout(){
-    localStorage.removeItem("user");
+    removeUser()
     this.authService.userloggedIn.next(false);
     this.router.navigate([RoutePaths.AUTH_LOGIN])
   }
 
   userLoggedIn(){
-    return localStorage.getItem("user") ? true : false
+    return getUser() ? true : false
   }
 
   ngOnDestroy() {

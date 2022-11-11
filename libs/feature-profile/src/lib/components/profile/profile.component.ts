@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { getUser } from '@bank/shared';
 
 @Component({
   selector: 'bank-profile',
@@ -9,6 +10,6 @@ export class ProfileComponent implements OnInit {
   user = ""
 
   ngOnInit(): void {
-    this.user = localStorage.getItem("user") || ""
+    this.user = getUser() || ""
   }
 }
