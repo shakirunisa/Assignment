@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import {MenuItem} from 'primeng/api';
+import { APP_URL, RoutePaths } from '../enums';
 import { LOCATION } from '../enums/Location';
 
 @Component({
@@ -9,6 +11,8 @@ import { LOCATION } from '../enums/Location';
 })
 export class HeaderComponent {
 
+  constructor(public router: Router){}
+  
   @Input() selectedLocation: string= LOCATION.INDIA
   items: MenuItem[] = [
     {
@@ -30,11 +34,11 @@ export class HeaderComponent {
         items:[
             {
                 label:'Login',
-
+                command: () => this.router.navigate([RoutePaths.AUTH_LOGIN])
             },
             {
                 label:'Register',
-
+                command: () => this.router.navigate([RoutePaths.AUTH_REGISTER])
             }
         ]
     }
@@ -42,10 +46,10 @@ export class HeaderComponent {
 
   setLocation(location: string){
     if(location === LOCATION.INDIA){
-      window.location.href = "http://localhost:4201"
+      window.location.href = APP_URL.INDIA
     }
     else{
-      window.location.href = "http://localhost:4202"
+      window.location.href = APP_URL.AMERICA
     }
   }
 }

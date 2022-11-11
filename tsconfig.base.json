@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@bank/feature-auth": ["libs/feature-auth/src/index.ts"],
       "@bank/home": ["libs/home/src/index.ts"],
       "@bank/shared": ["libs/shared/src/index.ts"]
     }
