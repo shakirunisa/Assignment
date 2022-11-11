@@ -7,6 +7,9 @@ import { Product } from "@bank/shared";
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  /**
+   * list of products to display in carousel
+   */
   products: Product[] = [];
 
 	responsiveOptions;
