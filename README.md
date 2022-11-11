@@ -1,6 +1,23 @@
-# NxExample
+# Bank Application
 
 This project was generated using [Nx](https://nx.dev).
+
+
+## To Run/ start Application
+
+Run `npm run runallApps` to run all the Applications.
+
+Navigate to http://localhost:4201/ for Indian bank. The app will automatically reload if you change any of the source files.
+
+Navigate to http://localhost:4202/ for American bank. The app will automatically reload if you change any of the source files.
+
+## Applications
+
+Application 1 - Indian Bank. https://github.com/Abdul-khaderT/Assignment/tree/main/apps/american-bank
+
+Application 2 - American Bank.
+
+
 
 <p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
 
