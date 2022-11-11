@@ -7,15 +7,27 @@ This project was generated using [Nx](https://nx.dev).
 
 Run `npm run runallApps` to run all the Applications.
 
+For login use a valid email and random password to login to the applications.
+
+
 Navigate to http://localhost:4201/ for Indian bank. The app will automatically reload if you change any of the source files.
 
 Navigate to http://localhost:4202/ for American bank. The app will automatically reload if you change any of the source files.
 
 ## Applications
 
-Application 1 - Indian Bank. https://github.com/Abdul-khaderT/Assignment/tree/main/apps/american-bank
+[Indian Bank](https://github.com/Abdul-khaderT/Assignment/tree/main/apps/indian-bank)
 
-Application 2 - American Bank.
+[American Bank](https://github.com/Abdul-khaderT/Assignment/tree/main/apps/american-bank)
+
+## Libraries
+[HOME PAGE](https://github.com/Abdul-khaderT/Assignment/tree/main/libs/home): Home page used in both the applications.
+
+[PROFILE PAGE](https://github.com/Abdul-khaderT/Assignment/tree/main/libs/feature-profile) : Profile page is used in both the applications and only logged in user can view this page http://localhost:4201/profile  http://localhost:4202/profile
+
+[LOGIN PAGE](https://github.com/Abdul-khaderT/Assignment/tree/main/libs/feature-auth) : Login page is used in both the applications http://localhost:4201/auth/login http://localhost:4202/auth/login
+
+[Shared Library](https://github.com/Abdul-khaderT/Assignment/tree/main/libs/shared) : This library has all the utilities, which are shared across application.  [Header component](https://github.com/Abdul-khaderT/Assignment/tree/main/libs/shared/src/lib/header) : which is used in both the applications. Responsible for showing the top navbar in all the pages. Through which user can switch applications and login to the app or visit the profile page once logged in.
 
 
 
