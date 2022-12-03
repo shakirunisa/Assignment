@@ -13,6 +13,6 @@ import { SharedModule } from '@bank/shared';
     SharedModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

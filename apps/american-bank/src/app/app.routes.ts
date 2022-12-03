@@ -2,20 +2,16 @@ import { Route } from '@angular/router';
 
 export const appRoutes: Route[] = [
     {
-        path: "home",
+        path: "appB",
         loadChildren: () => import("@bank/home").then(m => m.HomeModule),
     },
     {
-        path: "auth",
-        loadChildren: () => import("@bank/feature-auth").then(m => m.FeatureAuthModule),
-    },
-    {
-        path: "profile",
-        loadChildren: () => import("@bank/feature-profile").then(m => m.FeatureProfileModule),
+        path: "library",
+        loadChildren: () => import("@bank/shared").then(m => m.SharedModule),
     },
     {
         path: "",
         pathMatch: "full",
-        redirectTo: `/home`,
+        redirectTo: `/appB`,
     },
 ];

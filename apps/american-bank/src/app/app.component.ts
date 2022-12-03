@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LOCATION } from '@bank/shared';
 @Component({
   selector: 'bank-root',
   templateUrl: './app.component.html',
@@ -7,5 +6,4 @@ import { LOCATION } from '@bank/shared';
 })
 export class AppComponent {
   title = 'american-bank';
-  location = LOCATION.AMERICA
 }

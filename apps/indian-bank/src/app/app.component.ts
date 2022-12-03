@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LOCATION } from '@bank/shared';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'bank-root',
@@ -7,6 +7,12 @@ import { LOCATION } from '@bank/shared';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'indian-bank';
-  location = LOCATION.INDIA
+  constructor(private route: Router){
+
+  }
+
+  gotoNextApp(){
+    window.open("http://localhost:4202","_blank")
+   // window.location.href = 'http://localhost:4202';
+  }
 }

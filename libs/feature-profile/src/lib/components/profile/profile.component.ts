@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { getUser } from '@bank/shared';
 
 @Component({
   selector: 'bank-profile',
@@ -7,9 +6,9 @@ import { getUser } from '@bank/shared';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-  user = ""
+  //user = ""
 
   ngOnInit(): void {
-    this.user = getUser() || ""
+  console.log("")
   }
 }
